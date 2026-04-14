@@ -1,0 +1,661 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/CharlotteDxD/ProPythons/blob/main/Simulador_App_Corrida\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "QU2Jngvw49f7"
+      },
+      "source": [
+        "---\n",
+        "\n",
+        "<div align=\"center\">\n",
+        "  <img src=\"https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg\" width=\"80\"/>\n",
+        "</div>\n",
+        "\n",
+        "<h1 align=\"center\">Aula 3: Outro Exemplo de Regressão Linear</h1>\n",
+        "\n",
+        "<h3 align=\"center\">PhD. in progress Samir Ramos</h3>\n",
+        "\n",
+        "<div align=\"center\">\n",
+        "  <img src=\"https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white\"/>\n",
+        "  <img src=\"https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white\"/>\n",
+        "</div>\n",
+        "\n",
+        "---"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "idade = int(input(\"Qual a sua idade?: \"))\n",
+        "\n",
+        "if idade >= 18:\n",
+        "    print(\"Você é maior de idade! Pode entrar no evento\")\n",
+        "\n",
+        "else:\n",
+        "    print(\"Você é menor de idade! Não pode entrar no evento\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lnH6Tqnx5Szk",
+        "outputId": "d20a1a85-82f0-48ef-8451-5293d3d55d3b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Qual a sua idade?: 17\n",
+            "Você é menor de idade! Não pode entrar no evento\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "numero1 = int(input(\"Digite o primeiro número: \"))\n",
+        "numero2 = int(input(\"Digite o segundo número: \"))\n",
+        "\n",
+        "if numero1 == numero2:\n",
+        "    print(\"Os números são iguais\")\n",
+        "else:\n",
+        "    print(\"Os números não são iguais\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ne9HGrmv6BCm",
+        "outputId": "4111e1a8-3f2b-43c8-ef6e-8492799db79c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite o primeiro número: 2\n",
+            "Digite o segundo número: 4\n",
+            "Os números não são iguais\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "pAWx04QO6Y_k"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 373
+        },
+        "id": "17ccb056",
+        "outputId": "5d9a4b5c-e9b7-4d30-e38d-9296b05ab28d"
+      },
+      "source": [
+        "notas = []\n",
+        "\n",
+        "for i in range(3):\n",
+        "    while True:\n",
+        "        try:\n",
+        "            nota = float(input(f\"Digite a {i+1} nota: \"))\n",
+        "            if 0 <= nota <= 10:\n",
+        "                notas.append(nota)\n",
+        "                break\n",
+        "            else:\n",
+        "                print(\"A nota deve estar entre 0 e 10.\")\n",
+        "        except ValueError:\n",
+        "            print(\"Entrada inválida. por favor, digite um número.\")\n",
+        "\n",
+        "media = sum(notas) / len(notas)\n",
+        "\n",
+        "if media >= 7:\n",
+        "    situacao = \"Você foi aprovado\"\n",
+        "else:\n",
+        "    situacao = \"Você foi reprovado\"\n",
+        "\n",
+        "print(f\"Notas: {notas}\")\n",
+        "print(f\"Média: {media:.2f}\")\n",
+        "print(f\"Situação do aluno: {situacao}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "KeyboardInterrupt",
+          "evalue": "Interrupted by user",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mKeyboardInterrupt\u001b[0m                         Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipykernel_7507/2504812430.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      4\u001b[0m     \u001b[0;32mwhile\u001b[0m \u001b[0;32mTrue\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m         \u001b[0;32mtry\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 6\u001b[0;31m             \u001b[0mnota\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mfloat\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0minput\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34mf\"Digite a {i+1} nota: \"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      7\u001b[0m             \u001b[0;32mif\u001b[0m \u001b[0;36m0\u001b[0m \u001b[0;34m<=\u001b[0m \u001b[0mnota\u001b[0m \u001b[0;34m<=\u001b[0m \u001b[0;36m10\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      8\u001b[0m                 \u001b[0mnotas\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mappend\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mnota\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.12/dist-packages/ipykernel/kernelbase.py\u001b[0m in \u001b[0;36mraw_input\u001b[0;34m(self, prompt)\u001b[0m\n\u001b[1;32m   1175\u001b[0m                 \u001b[0;34m\"raw_input was called, but this frontend does not support input requests.\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1176\u001b[0m             )\n\u001b[0;32m-> 1177\u001b[0;31m         return self._input_request(\n\u001b[0m\u001b[1;32m   1178\u001b[0m             \u001b[0mstr\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mprompt\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1179\u001b[0m             \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_parent_ident\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m\"shell\"\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.12/dist-packages/ipykernel/kernelbase.py\u001b[0m in \u001b[0;36m_input_request\u001b[0;34m(self, prompt, ident, parent, password)\u001b[0m\n\u001b[1;32m   1217\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mKeyboardInterrupt\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1218\u001b[0m                 \u001b[0;31m# re-raise KeyboardInterrupt, to truncate traceback\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1219\u001b[0;31m                 \u001b[0;32mraise\u001b[0m \u001b[0mKeyboardInterrupt\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Interrupted by user\"\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;32mfrom\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1220\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mException\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1221\u001b[0m                 \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mlog\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mwarning\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Invalid Message:\"\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mexc_info\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;32mTrue\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mKeyboardInterrupt\u001b[0m: Interrupted by user"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "RGK8GMTd8TFC"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "474f7122",
+        "outputId": "f011f4b3-a323-4bc7-957a-c9cf0db2390f"
+      },
+      "source": [
+        "produtos = []\n",
+        "\n",
+        "print(\"Por favor, digite o nome de 5 produtos que você comprou:\")\n",
+        "for i in range(5):\n",
+        "    while True:\n",
+        "        produto = input(f\"Digite o {i+1}º produto: \")\n",
+        "        if produto.strip():  # Verifica se a entrada não está vazia ou contém apenas espaços\n",
+        "            produtos.append(produto.strip())\n",
+        "            break\n",
+        "        else:\n",
+        "            print(\"O nome do produto não pode ser vazio. Por favor, digite novamente.\")\n",
+        "\n",
+        "print(\"\\nProdutos registrados:\")\n",
+        "for produto in produtos:\n",
+        "    print(f\"- {produto}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Por favor, digite o nome de 5 produtos que você comprou:\n",
+            "Digite o 1º produto: arroz\n",
+            "Digite o 2º produto: feijao\n",
+            "Digite o 3º produto: chocolate\n",
+            "Digite o 4º produto: farinha\n",
+            "Digite o 5º produto: manteiga\n",
+            "\n",
+            "Produtos registrados:\n",
+            "- arroz\n",
+            "- feijao\n",
+            "- chocolate\n",
+            "- farinha\n",
+            "- manteiga\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "inw86djG8W4P"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "fL0v2q_V8wpT"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "fd76b2c7",
+        "outputId": "843c7eaf-79dd-49da-bb78-669ff7afa968"
+      },
+      "source": [
+        "numeros = []\n",
+        "\n",
+        "print(\"Digite 5 números:\")\n",
+        "for i in range(5):\n",
+        "    while True:\n",
+        "        try:\n",
+        "            numero = float(input(f\"Digite o {i+1} número: \"))\n",
+        "            numeros.append(numero)\n",
+        "            break\n",
+        "        except ValueError:\n",
+        "            print(\"Entrada inválida. Por favor, digite um número.\")\n",
+        "\n",
+        "print(\"\\nInformações sobre os números\")\n",
+        "\n",
+        "print(f\"1 - Lista completa de números: {numeros}\")\n",
+        "\n",
+        "if numeros:\n",
+        "    maior_numero = numeros[0]\n",
+        "    for num in numeros:\n",
+        "        if num > maior_numero:\n",
+        "            maior_numero = num\n",
+        "    print(f\"2 - O maior número: {maior_numero}\")\n",
+        "else:\n",
+        "    print(\"2 - Não há números na lista para determinar o maior.\")\n",
+        "\n",
+        "if numeros:\n",
+        "    menor_numero = numeros[0]\n",
+        "    for num in numeros:\n",
+        "        if num < menor_numero:\n",
+        "            menor_numero = num\n",
+        "    print(f\"3 - O menor número: {menor_numero}\")\n",
+        "else:\n",
+        "    print(\"3 - Não há números na lista para determinar o menor.\")\n",
+        "\n",
+        "soma_numeros = 0\n",
+        "for num in numeros:\n",
+        "    soma_numeros += num\n",
+        "print(f\"4 - A soma de todos os números: {soma_numeros}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite 5 números:\n",
+            "Digite o 1 número: 4\n",
+            "Digite o 2 número: 6\n",
+            "Digite o 3 número: 4\n",
+            "Digite o 4 número: 5\n",
+            "Digite o 5 número: 3\n",
+            "\n",
+            "Informações sobre os números\n",
+            "1 - Lista completa de números: [4.0, 6.0, 4.0, 5.0, 3.0]\n",
+            "2 - O maior número: 6.0\n",
+            "3 - O menor número: 3.0\n",
+            "4 - A soma de todos os números: 22.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0f5586ea",
+        "outputId": "9bbfc712-7f4e-4d2f-c441-4e50a9aa6082"
+      },
+      "source": [
+        "soma_total = 0\n",
+        "\n",
+        "print(\"Digite números para somar. Pra interromper digite Parar\")\n",
+        "\n",
+        "while True:\n",
+        "    entrada = input(\"Digite um número: \")\n",
+        "\n",
+        "    try:\n",
+        "        numero = float(entrada)\n",
+        "        soma_total += numero\n",
+        "        print(f\"Número adicionado: {numero}. Soma atual: {soma_total}\")\n",
+        "    except ValueError:\n",
+        "        print(\"Entrada interrompida.\")\n",
+        "        break\n",
+        "\n",
+        "print(f\"\\nA soma total dos números digitados é: {soma_total}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite números para somar. Pra interromper digite Parar\n",
+            "Digite um número: 43\n",
+            "Número adicionado: 43.0. Soma atual: 43.0\n",
+            "Digite um número: 6\n",
+            "Número adicionado: 6.0. Soma atual: 49.0\n",
+            "Digite um número: 3\n",
+            "Número adicionado: 3.0. Soma atual: 52.0\n",
+            "Digite um número: nao\n",
+            "Entrada interrompida.\n",
+            "\n",
+            "A soma total dos números digitados é: 52.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 582
+        },
+        "id": "6a575fc1",
+        "outputId": "1cd240ca-3802-4fd0-86d2-7dce466760df"
+      },
+      "source": [
+        "usuario_correto = \"Charles\"\n",
+        "senha_correta = \"123456\"\n",
+        "\n",
+        "usuario_digitado = \"\"\n",
+        "senha_digitada = \"\"\n",
+        "\n",
+        "while usuario_digitado != usuario_correto:\n",
+        "    usuario_digitado = input(\"Digite o nome de usuário: \")\n",
+        "    if usuario_digitado == usuario_correto:\n",
+        "        print(\"Usuário correto!\")\n",
+        "    else:\n",
+        "        print(\"Usuário incorreto. Tente novamente.\")\n",
+        "\n",
+        "while senha_digitada != senha_correta:\n",
+        "    senha_digitada = input(\"Digite a senha: \")\n",
+        "    if senha_digitada == senha_correta:\n",
+        "        print(\"Senha correta!\")\n",
+        "    else:\n",
+        "        print(\"Senha incorreta. Tente novamente.\")\n",
+        "\n",
+        "print(\"\\nLogin bem-sucedido. Bem Vindo!\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite o nome de usuário: 2\n",
+            "Usuário incorreto. Tente novamente.\n",
+            "Digite o nome de usuário: 3\n",
+            "Usuário incorreto. Tente novamente.\n",
+            "Digite o nome de usuário: 4\n",
+            "Usuário incorreto. Tente novamente.\n",
+            "Digite o nome de usuário: Charles\n",
+            "Usuário correto!\n",
+            "Digite a senha: 3\n",
+            "Senha incorreta. Tente novamente.\n",
+            "Digite a senha: 3\n",
+            "Senha incorreta. Tente novamente.\n"
+          ]
+        },
+        {
+          "output_type": "error",
+          "ename": "KeyboardInterrupt",
+          "evalue": "Interrupted by user",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mKeyboardInterrupt\u001b[0m                         Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipykernel_7507/3032644885.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[1;32m     13\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     14\u001b[0m \u001b[0;32mwhile\u001b[0m \u001b[0msenha_digitada\u001b[0m \u001b[0;34m!=\u001b[0m \u001b[0msenha_correta\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 15\u001b[0;31m     \u001b[0msenha_digitada\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0minput\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Digite a senha: \"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     16\u001b[0m     \u001b[0;32mif\u001b[0m \u001b[0msenha_digitada\u001b[0m \u001b[0;34m==\u001b[0m \u001b[0msenha_correta\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     17\u001b[0m         \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Senha correta!\"\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.12/dist-packages/ipykernel/kernelbase.py\u001b[0m in \u001b[0;36mraw_input\u001b[0;34m(self, prompt)\u001b[0m\n\u001b[1;32m   1175\u001b[0m                 \u001b[0;34m\"raw_input was called, but this frontend does not support input requests.\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1176\u001b[0m             )\n\u001b[0;32m-> 1177\u001b[0;31m         return self._input_request(\n\u001b[0m\u001b[1;32m   1178\u001b[0m             \u001b[0mstr\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mprompt\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1179\u001b[0m             \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_parent_ident\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m\"shell\"\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.12/dist-packages/ipykernel/kernelbase.py\u001b[0m in \u001b[0;36m_input_request\u001b[0;34m(self, prompt, ident, parent, password)\u001b[0m\n\u001b[1;32m   1217\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mKeyboardInterrupt\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1218\u001b[0m                 \u001b[0;31m# re-raise KeyboardInterrupt, to truncate traceback\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m-> 1219\u001b[0;31m                 \u001b[0;32mraise\u001b[0m \u001b[0mKeyboardInterrupt\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Interrupted by user\"\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;32mfrom\u001b[0m \u001b[0;32mNone\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m   1220\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mException\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m   1221\u001b[0m                 \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mlog\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mwarning\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Invalid Message:\"\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mexc_info\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;32mTrue\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mKeyboardInterrupt\u001b[0m: Interrupted by user"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "AfY3OdXA-eGh"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "Go4umTlE-nDv"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "f3d382f0",
+        "outputId": "187c01bc-06bf-4a44-e745-9152df201044"
+      },
+      "source": [
+        "notas_alunos = []\n",
+        "\n",
+        "for i in range(3):\n",
+        "    while True:\n",
+        "        try:\n",
+        "            nota_digitada = float(input(f\"Digite a {i+1} nota do aluno: \"))\n",
+        "            if 0 <= nota_digitada <= 10:\n",
+        "                notas_alunos.append(nota_digitada)\n",
+        "                break\n",
+        "            else:\n",
+        "                print(\"A nota deve estar entre 0 e 10. Por favor, digite novamente.\")\n",
+        "        except ValueError:\n",
+        "            print(\"Entrada inválida. Por favor, digite um número.\")\n",
+        "\n",
+        "print(f\"Notas registradas: {notas_alunos}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite a 1 nota do aluno: d\n",
+            "Entrada inválida. Por favor, digite um número.\n",
+            "Digite a 1 nota do aluno: f\n",
+            "Entrada inválida. Por favor, digite um número.\n",
+            "Digite a 1 nota do aluno: 2\n",
+            "Digite a 2 nota do aluno: 2\n",
+            "Digite a 3 nota do aluno: 2\n",
+            "Notas registradas: [2.0, 2.0, 2.0]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "MPBFFcP29WLJ"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4ded7fa7",
+        "outputId": "d828509a-34fb-4b39-b3d3-2b60e224b5bd"
+      },
+      "source": [
+        "numeros_digitados = []\n",
+        "\n",
+        "print(\"Digite números ou 'parar' pra encerrar a entrada:\")\n",
+        "\n",
+        "while True:\n",
+        "    entrada = input(\"Digite um número: \")\n",
+        "    if entrada.lower() == 'parar':\n",
+        "        break\n",
+        "    try:\n",
+        "        numero = float(entrada)\n",
+        "        numeros_digitados.append(numero)\n",
+        "    except ValueError:\n",
+        "        print(\"Entrada inválida. Por favor, digite um número ou 'parar'.\")\n",
+        "\n",
+        "print(f\"\\nNúmeros digitados: {numeros_digitados}\")\n",
+        "\n",
+        "contagem_positivos = 0\n",
+        "for num in numeros_digitados:\n",
+        "    if num > 0:\n",
+        "        contagem_positivos += 1\n",
+        "\n",
+        "print(f\"Quantidade de números positivos: {contagem_positivos}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite números ou 'parar' pra encerrar a entrada:\n",
+            "Digite um número: -2\n",
+            "Digite um número: -6\n",
+            "Digite um número: -8\n",
+            "Digite um número: 5\n",
+            "Digite um número: parar\n",
+            "\n",
+            "Números digitados: [-2.0, -6.0, -8.0, 5.0]\n",
+            "Quantidade de números positivos: 1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "b07f0fec",
+        "outputId": "4f3d17bc-2f6e-4042-960b-a3c7ea5462a3"
+      },
+      "source": [
+        "notas_alunos = []\n",
+        "\n",
+        "numero_alunos = 3\n",
+        "numero_provas = 4\n",
+        "\n",
+        "print(f\"Registro de notas para {numero_alunos} alunos em {numero_provas} provas\")\n",
+        "\n",
+        "for i in range(numero_alunos):\n",
+        "    notas_do_aluno = []\n",
+        "    print(f\"\\nNotas do Aluno {i+1}\")\n",
+        "    for j in range(numero_provas):\n",
+        "        while True:\n",
+        "            try:\n",
+        "                nota = float(input(f\"Digite a nota da prova {j+1} para o aluno {i+1}: \"))\n",
+        "                if 0 <= nota <= 10:\n",
+        "                    notas_do_aluno.append(nota)\n",
+        "                    break\n",
+        "                else:\n",
+        "                    print(\"A nota deve estar entre 0 e 10. Por favor, digite novamente.\")\n",
+        "            except ValueError:\n",
+        "                print(\"Entrada inválida. Por favor, digite um número.\")\n",
+        "    notas_alunos.append(notas_do_aluno)\n",
+        "\n",
+        "print(\"\\nResultados\")\n",
+        "for i, notas in enumerate(notas_alunos):\n",
+        "    media_aluno = sum(notas) / len(notas)\n",
+        "    print(f\"Aluno {i+1}: Notas = {notas}, Média = {media_aluno:.2f}\")"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Registro de notas para 3 alunos em 4 provas\n",
+            "\n",
+            "Notas do Aluno 1\n",
+            "Digite a nota da prova 1 para o aluno 1: 7\n",
+            "Digite a nota da prova 2 para o aluno 1: 5\n",
+            "Digite a nota da prova 3 para o aluno 1: 9\n",
+            "Digite a nota da prova 4 para o aluno 1: 6\n",
+            "\n",
+            "Notas do Aluno 2\n",
+            "Digite a nota da prova 1 para o aluno 2: 7\n",
+            "Digite a nota da prova 2 para o aluno 2: 6\n",
+            "Digite a nota da prova 3 para o aluno 2: 4\n",
+            "Digite a nota da prova 4 para o aluno 2: 7\n",
+            "\n",
+            "Notas do Aluno 3\n",
+            "Digite a nota da prova 1 para o aluno 3: 9\n",
+            "Digite a nota da prova 2 para o aluno 3: 5\n",
+            "Digite a nota da prova 3 para o aluno 3: 6\n",
+            "Digite a nota da prova 4 para o aluno 3: 8\n",
+            "\n",
+            "Resultados\n",
+            "Aluno 1: Notas = [7.0, 5.0, 9.0, 6.0], Média = 6.75\n",
+            "Aluno 2: Notas = [7.0, 6.0, 4.0, 7.0], Média = 6.00\n",
+            "Aluno 3: Notas = [9.0, 5.0, 6.0, 8.0], Média = 7.00\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "tQB33BVD_2Gp"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# Nova seção"
+      ],
+      "metadata": {
+        "id": "CI7fIRoB5C6h"
+      }
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "FIAP_2026",
+      "language": "python",
+      "name": "python3"
+    },
+    "language_info": {
+      "codemirror_mode": {
+        "name": "ipython",
+        "version": 3
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3",
+      "version": "3.12.6"
+    },
+    "colab": {
+      "provenance": [],
+      "toc_visible": true,
+      "include_colab_link": true
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
